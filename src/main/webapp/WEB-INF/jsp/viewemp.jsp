@@ -8,9 +8,9 @@
         <th>Name</th>
         <th>Salary</th>
         <th>Designation</th>
-        <th>Action</th>
-        <th>Email<th>
+        <th>Buttons</th>
     </tr>
+
     <c:forEach var="emp" items="${list}">
         <tr>
             <td>${emp.id}</td>
@@ -20,13 +20,18 @@
             <td>${emp.email}</td>
 
             <td>
+                <form:form method="post" action="email">
+                <input type="hidden" name = "email" value="${emp.email}">
+                <input type="submit" name="Wyslij maila" value="/email"/>
+                </form:form>
+
                 <form:form method="post" action="delete">
-                    <input type="hidden" id="id" name="id" value="${emp.id}"/>
-                    <input type="submit" class="button" name="Delete" value="delete"/>
+                    <input type="hidden" name = "id" value="${emp.id}"/>
+                    <input type="submit" name="Delete" value="delete"/>
                 </form:form>
                 <form:form method="post" action="edit">
-                    <input type="hidden" id="id" name="id" value="${emp.id}"/>
-                    <input type="submit" class="button" name="Edit" value="edit"/>
+                    <input type="hidden" name = "id" value="${emp.id}"/>
+                    <input type="submit" name="Edit" value="edit"/>
                 </form:form>
         <%--    <form:form method="post" action="delete">
              <input type="submit" class="button" name="Delete" value="delete"/>
@@ -35,10 +40,13 @@
         </tr>
     </c:forEach>
 
-    <td>
+    <tr>
+    <td colspan="6" align = "center">
+
         <form:form method="post" action="test">
-            <input type="submit" class="button" name="test" value="test"/>
+            <input type="submit" name="test" value="Przycisk test"/>
         </form:form>
     </td>
+    </tr>
 
 </table>

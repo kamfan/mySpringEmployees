@@ -28,10 +28,10 @@ public class SendEmail {
 
         try {
             Message message = new MimeMessage(session);
-            message.setFrom(new InternetAddress("from@gmail.com"));
+            message.setFrom(new InternetAddress("Janek"));
             message.setRecipients(
                     Message.RecipientType.TO,
-                    InternetAddress.parse("kamfan.tomek@gmail.com")
+                    InternetAddress.parse("bik3r94@gmail.com")
             );
             message.setSubject("Testing");
             message.setText("Hello");

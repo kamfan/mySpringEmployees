@@ -7,6 +7,7 @@ public class Emp {
     private String designation;
     private String email;
 
+
     public Emp() {}
 
     public Emp(int id, String name, float salary, String designation, String email) {
@@ -16,6 +17,7 @@ public class Emp {
         this.salary = salary;
         this.designation = designation;
         this.email = email;
+
     }
 
     public int getId() {
@@ -48,5 +50,4 @@ public class Emp {
     public void setEmail(String email) {
         this.email = email;
     }
-
 }
